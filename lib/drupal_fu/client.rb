@@ -4,8 +4,6 @@ require 'json'
 module DrupalFu
   class Client
     
-    @@base_uri = nil
-    
     class << self
       def options
         @options ||= {
