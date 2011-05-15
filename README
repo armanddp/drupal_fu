@@ -1,0 +1,24 @@
+== drupal_fu 
+
+Simple Ruby gem for reading content nodes from a Drupal CMS with the Services and REST Server modules enabled
+
+== Installation
+
+Rails app:
+
+gem 'drupal_fu'
+
+Configuration:
+
+rails g drupal_fu:config
+
+This adds a drupal_fu.rb initializer:
+
+DRUPAL_BASE_URI = "http://yoursite/rest"
+DrupalFu::Client.options[:base_uri] = DRUPAL_BASE_URI
+
+== Usage
+
+Retrieving a node:
+
+@node = DrupalFu::Client.new.node(params[:id].to_i)
